@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -112,7 +112,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\JustCopyIt\JustCopyIt.csproj">
-            <Project>{7D9A32DC-D7F1-40E5-8C83-626542EB6AC0}</Project>
+            <Project>{6C32CA1B-D6DB-4B0E-9339-BE3F98304DAA}</Project>
             <Name>JustCopyIt</Name>
         </ProjectReference>
     </ItemGroup>

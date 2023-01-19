@@ -12,6 +12,7 @@
     <ItemGroup>
         <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+        <PackageReference Include="Plugin.LocalNotification" Version="9.2.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -19,5 +20,8 @@
         <DependentUpon>MainPage.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Plugin.LocalNotification" />
     </ItemGroup>
 </Project>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="local:NotificationPageModel" 
+                      xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:local="clr-namespace:JustCopyIt"
+                      x:DataType="local:NotificationPageModel"
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      x:Class="JustCopyIt.NotificationPage">
+    <StackLayout Spacing="15">
+        <Label Text="This page display information from notification" 
+           HorizontalOptions="Center"
+           VerticalOptions="Start" />
+        
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding Information}"
+               VerticalOptions="Start" />
+        
+        <Label FontSize="Large"
+               HorizontalOptions="Center"
+               Text="{Binding NotificationData}"
+               VerticalOptions="Start" />
+
+    </StackLayout>
+
+</views:MvxContentPage>
