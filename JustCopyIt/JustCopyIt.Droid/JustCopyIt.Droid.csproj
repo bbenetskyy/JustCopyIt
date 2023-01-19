@@ -14,7 +14,6 @@
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-        <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
         <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     </PropertyGroup>
@@ -55,6 +54,9 @@
         <Compile Include="Resources\Resource.Designer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Setup.cs" />
+        <Compile Include="WebView\CustomWebViewRenderer.cs" />
+        <Compile Include="WebView\JavascriptWebViewClient.cs" />
+        <Compile Include="WebView\JSBridge.cs" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Resources\AboutResources.txt" />
@@ -69,7 +71,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\JustCopyIt\JustCopyIt.csproj">
-            <Project>{7D9A32DC-D7F1-40E5-8C83-626542EB6AC0}</Project>
+            <Project>{6C32CA1B-D6DB-4B0E-9339-BE3F98304DAA}</Project>
             <Name>JustCopyIt</Name>
         </ProjectReference>
     </ItemGroup>

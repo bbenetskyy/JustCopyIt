@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<views:MvxContentPage x:TypeArguments="justCopyIt:WebViewPageModel"
+                      xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                      xmlns:justCopyIt="clr-namespace:JustCopyIt;assembly=JustCopyIt"
+                      xmlns:controls="clr-namespace:JustCopyIt.Controls;assembly=JustCopyIt"
+                      x:DataType="justCopyIt:WebViewPageModel"
+                      x:Class="JustCopyIt.WebViewPage">
+    <StackLayout Orientation="Vertical" Spacing="10">
+        
+        <Label Text="Enter Text For HTML:"/>
+        <Entry x:Name="XamlEntry"/>
+        <Label Text="Get Counter Value From HTML:"/>
+        <Label x:Name="JSLabel" Text="{Binding JSCounterValue}"/>
+        
+        <controls:CustomWebView HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                XamlValue="{Binding  Text, Source={x:Reference XamlEntry}}"
+                                JSValue="{Binding JSCounterValue, Mode=TwoWay}">
+            <controls:CustomWebView.Source>
+                <HtmlWebViewSource Html="{Binding HtmlSource}"/>
+            </controls:CustomWebView.Source>
+        </controls:CustomWebView>
+        
+    </StackLayout>
+    
+</views:MvxContentPage>
