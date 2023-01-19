@@ -12,3 +12,6 @@ Repo with Showcases which you can just copy-paste into your project
 
 #4 Write Custom Renderer with invokation of our Xamarin Function and Setup there redirections to Bridge and our custom Web Client
 
+
+
+<a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Alfredo Hernandez - Flaticon</a>
