@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -21,6 +21,24 @@ namespace DemoProject.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             LocalNotificationCenter.NotifyNotificationTapped(Intent);
+        }
+        
+        protected override void OnStart()
+        {
+            base.OnStart();
+            
+            const int requestLocationId = 0;
+            string[] notificationPermission =
+            {
+                Manifest.Permission.PostNotifications
+            };
+
+            if ((int)Build.VERSION.SdkInt < 33) return;
+
+            if (CheckSelfPermission(Manifest.Permission.PostNotifications) != Permission.Granted)
+            {
+                RequestPermissions(notificationPermission, requestLocationId);
+            }
         }
         
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

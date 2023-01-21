@@ -7,6 +7,7 @@ using MvvmCross.ViewModels;
 using Plugin.LocalNotification;
 using Plugin.LocalNotification.AndroidOption;
 using Plugin.LocalNotification.EventArgs;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace DemoProject.PageModels
@@ -37,8 +38,11 @@ namespace DemoProject.PageModels
         {
             if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
             {
-               var result = await LocalNotificationCenter.Current.RequestNotificationPermission();
+                //this should work according to docs, but it doesn't work for me on Android 13
+                //that's why I request them also at MainActivity->OnStart
+                var result = await LocalNotificationCenter.Current.RequestNotificationPermission();
             }
+
             //this will be called from BG Service later
             var notification = new NotificationRequest
             {
@@ -49,7 +53,7 @@ namespace DemoProject.PageModels
                 NotificationId = 1337,
                 Schedule = 
                 {
-                    NotifyTime = DateTime.Now.AddSeconds(1) // Used for Scheduling local notification, if not specified notification will show immediately.
+                    NotifyTime = DateTime.Now.AddSeconds(5) // Used for Scheduling local notification, if not specified notification will show immediately.
                 },
                 Android =
                 {
