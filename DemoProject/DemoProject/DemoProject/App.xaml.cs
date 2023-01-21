@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DemoProject.PageModels;
 using Microsoft.Extensions.Logging;
 using MvvmCross;
+using MvvmCross.Navigation;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,10 +13,17 @@ namespace DemoProject
 {
     public partial class App : Application
     {
+        private IMvxNavigationService _navigationService;
+
         public App ()
         {
             InitializeComponent();
+            
+            // Local Notification tap event listener
+            LocalNotificationCenter.Current.NotificationActionTapped += OnNotificationActionTapped;
         }
+
+        public IMvxNavigationService NavigationService => _navigationService ??= Mvx.IoCProvider.Resolve<IMvxNavigationService>();
 
         protected override void OnStart()
         {
@@ -20,7 +31,16 @@ namespace DemoProject
             TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
         }
 
-        #region Private Methods
+        private void OnNotificationActionTapped(NotificationEventArgs e)
+        {
+            // your code goes here
+            LocalNotificationCenter.Current.ClearAll();
+            NavigationService.Navigate<NotificationPageModel, NotificationParams>(new NotificationParams()
+            {
+                Information = e.Request.Title,
+                Data = e.Request.ReturningData
+            });
+        }
 
         private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
         {
@@ -42,7 +62,6 @@ namespace DemoProject
                 logger.LogError(exception, exception.Message);
             }
         }
-        #endregion Private Methods
     }
 }
 

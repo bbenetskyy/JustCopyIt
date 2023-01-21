@@ -4,6 +4,9 @@ using DemoProject.Services;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.AndroidOption;
+using Plugin.LocalNotification.EventArgs;
 using Xamarin.Forms;
 
 namespace DemoProject.PageModels
@@ -19,15 +22,47 @@ namespace DemoProject.PageModels
         {
             _backgroundService = backgroundService;
             _navigationService = navigationService;
+            
             StartBackgroundServiceCommand = new Command(ExecuteStartBackgroundServiceCommand);
             StopBackgroundServiceCommand = new Command(ExecuteStopBackgroundServiceCommand);
             OpenWebViewCommand = new MvxCommand(ExecuteOpenWebViewCommand);
         }
-        
-        
+
+
         public ICommand StartBackgroundServiceCommand { get; }
         public ICommand StopBackgroundServiceCommand { get; }
         public ICommand OpenWebViewCommand { get; }
+        
+        public override async void ViewAppeared()
+        {
+            if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
+            {
+               var result = await LocalNotificationCenter.Current.RequestNotificationPermission();
+            }
+            //this will be called from BG Service later
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = "Test Description",
+                Title = "Notification!",
+                ReturningData = "Dummy Data",
+                NotificationId = 1337,
+                Schedule = 
+                {
+                    NotifyTime = DateTime.Now.AddSeconds(10) // Used for Scheduling local notification, if not specified notification will show immediately.
+                },
+                Android =
+                {
+                    Priority = AndroidPriority.High
+                    // IconSmallName =
+                    // {
+                    //     ResourceName = "check"
+                    // }
+                }
+            };
+
+            await LocalNotificationCenter.Current.Show(notification);
+        }
         
         
         private void ExecuteStartBackgroundServiceCommand(object obj)
@@ -44,7 +79,6 @@ namespace DemoProject.PageModels
         {
             _navigationService.Navigate<WebViewPageModel>();
         }
-
     }
 }
 
