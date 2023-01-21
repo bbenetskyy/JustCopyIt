@@ -30,7 +30,7 @@ namespace DemoProject.Droid.Platform
         public override void Stop()
         {
             base.Stop();
-            TokenSource.Cancel();
+            TokenSource?.Cancel();
         }
 
         protected override Notification BuildNotification()
