@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DemoProject.Pages.MainPage"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:pageModels="clr-namespace:DemoProject.PageModels"
+    x:TypeArguments="pageModels:MainPageModel">
+    <ContentView
+        Padding="20">
+        <StackLayout
+            VerticalOptions="Center">
+            <Button
+                Text="Start Background Service"
+                BackgroundColor="Green"
+                TextColor="White"
+                HeightRequest="50"
+                Command="{Binding StartBackgroundServiceCommand}" />
+            <Button
+                Text="Stop Background Service"
+                BackgroundColor="Red"
+                TextColor="White"
+                HeightRequest="50"
+                Command="{Binding StopBackgroundServiceCommand}" />
+        </StackLayout>
+    </ContentView>
+</views:MvxContentPage>
+
