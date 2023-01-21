@@ -2,10 +2,10 @@
 <views:MvxContentPage x:TypeArguments="local:NotificationPageModel" 
                       xmlns="http://xamarin.com/schemas/2014/forms"
                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                      xmlns:local="clr-namespace:JustCopyIt"
                       x:DataType="local:NotificationPageModel"
                       xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-                      x:Class="JustCopyIt.NotificationPage">
+                      xmlns:local="clr-namespace:DemoProject.PageModels;assembly=DemoProject"
+                      x:Class="DemoProject.Pages.NotificationPage">
     <StackLayout Spacing="15">
         <Label Text="This page display information from notification" 
            HorizontalOptions="Center"

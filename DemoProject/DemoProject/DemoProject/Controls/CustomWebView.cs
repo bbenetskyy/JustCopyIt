@@ -1,6 +1,6 @@
 using Xamarin.Forms;
 
-namespace JustCopyIt.Controls
+namespace DemoProject.Controls
 {
     public class CustomWebView : WebView
     {

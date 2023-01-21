@@ -1,14 +1,13 @@
-
 using System;
 using Android.Content;
-using JustCopyIt.Controls;
-using JustCopyIt.Droid.WebView;
+using DemoProject.Controls;
+using DemoProject.Droid.WebView;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
 
-namespace JustCopyIt.Droid.WebView
+namespace DemoProject.Droid.WebView
 {
     public class CustomWebViewRenderer : WebViewRenderer
     {

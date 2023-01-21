@@ -75,6 +75,9 @@
     <Compile Include="Platform\BaseNotificationService.cs" />
     <Compile Include="Platform\DefaultNotificationService.cs" />
     <Compile Include="Platform\DefaultBackgroundService.cs" />
+    <Compile Include="WebView\CustomWebViewRenderer.cs" />
+    <Compile Include="WebView\JavascriptWebViewClient.cs" />
+    <Compile Include="WebView\JSBridge.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

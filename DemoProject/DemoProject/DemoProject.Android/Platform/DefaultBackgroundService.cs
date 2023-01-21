@@ -44,7 +44,7 @@ namespace DemoProject.Droid.Platform
 
             return Task.Run(async () =>
             {
-                new MyNotification().Show();
+                //todo new MyNotification().Show();
                 int index = 1;
                 do
                 {

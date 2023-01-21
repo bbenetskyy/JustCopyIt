@@ -1,6 +1,6 @@
 using Xamarin.Forms.Platform.Android;
 
-namespace JustCopyIt.Droid.WebView
+namespace DemoProject.Droid.WebView
 {
     public class JavascriptWebViewClient : FormsWebViewClient
     {

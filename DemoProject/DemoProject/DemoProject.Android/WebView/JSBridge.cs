@@ -1,9 +1,9 @@
 using System;
 using Android.Webkit;
+using DemoProject.Controls;
 using Java.Interop;
-using JustCopyIt.Controls;
 
-namespace JustCopyIt.Droid.WebView
+namespace DemoProject.Droid.WebView
 {
     public class JSBridge : Java.Lang.Object
     {

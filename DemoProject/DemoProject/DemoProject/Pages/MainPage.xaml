@@ -22,6 +22,11 @@
                 TextColor="White"
                 HeightRequest="50"
                 Command="{Binding StopBackgroundServiceCommand}" />
+            <Button Text="Hybrid webviewer"
+                    BackgroundColor="MediumBlue"
+                    TextColor="White"
+                    HeightRequest="50"
+                    Command="{Binding OpenWebViewCommand}"/>
         </StackLayout>
     </ContentView>
 </views:MvxContentPage>

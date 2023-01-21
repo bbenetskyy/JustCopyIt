@@ -1,7 +1,6 @@
-﻿using System;
-using MvvmCross.ViewModels;
+﻿using MvvmCross.ViewModels;
 
-namespace JustCopyIt
+namespace DemoProject.PageModels
 {
 	public class NotificationParams
 	{

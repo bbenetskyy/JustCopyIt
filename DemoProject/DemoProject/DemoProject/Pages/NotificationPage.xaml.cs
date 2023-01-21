@@ -1,6 +1,7 @@
-﻿using MvvmCross.Forms.Views;
+﻿using DemoProject.PageModels;
+using MvvmCross.Forms.Views;
 
-namespace JustCopyIt
+namespace DemoProject.Pages
 {
     public partial class NotificationPage : MvxContentPage<NotificationPageModel>
     {

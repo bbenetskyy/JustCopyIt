@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<views:MvxContentPage x:TypeArguments="justCopyIt:WebViewPageModel"
+<views:MvxContentPage x:TypeArguments="pageModels:WebViewPageModel"
                       xmlns="http://xamarin.com/schemas/2014/forms"
                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                       xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-                      xmlns:justCopyIt="clr-namespace:JustCopyIt;assembly=JustCopyIt"
-                      xmlns:controls="clr-namespace:JustCopyIt.Controls;assembly=JustCopyIt"
-                      x:DataType="justCopyIt:WebViewPageModel"
-                      x:Class="JustCopyIt.WebViewPage">
+                      xmlns:pageModels="clr-namespace:DemoProject.PageModels;assembly=DemoProject"
+                      xmlns:controls="clr-namespace:DemoProject.Controls;assembly=DemoProject"
+                      x:DataType="pageModels:WebViewPageModel"
+                      x:Class="DemoProject.Pages.WebViewPage">
     <StackLayout Orientation="Vertical" Spacing="10">
         
         <Label Text="Enter Text For HTML:"/>

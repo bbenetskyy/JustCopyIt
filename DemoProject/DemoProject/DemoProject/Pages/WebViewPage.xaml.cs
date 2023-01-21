@@ -1,6 +1,7 @@
+using DemoProject.PageModels;
 using MvvmCross.Forms.Views;
 
-namespace JustCopyIt
+namespace DemoProject.Pages
 {
     public partial class WebViewPage : MvxContentPage<WebViewPageModel>
     {

@@ -1,6 +1,6 @@
 using MvvmCross.ViewModels;
 
-namespace JustCopyIt
+namespace DemoProject.PageModels
 {
     public class WebViewPageModel : MvxViewModel
     {
