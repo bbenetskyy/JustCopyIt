@@ -49,7 +49,7 @@ namespace DemoProject.PageModels
                 NotificationId = 1337,
                 Schedule = 
                 {
-                    NotifyTime = DateTime.Now.AddSeconds(5) // Used for Scheduling local notification, if not specified notification will show immediately.
+                    NotifyTime = DateTime.Now.AddSeconds(1) // Used for Scheduling local notification, if not specified notification will show immediately.
                 },
                 Android =
                 {

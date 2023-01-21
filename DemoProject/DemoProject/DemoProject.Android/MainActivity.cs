@@ -15,6 +15,8 @@ namespace DemoProject.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            LocalNotificationCenter.CreateNotificationChannel();
+            
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

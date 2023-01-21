@@ -31,15 +31,29 @@ namespace DemoProject
             TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
         }
 
-        private void OnNotificationActionTapped(NotificationEventArgs e)
+        private void OnNotificationActionTapped(NotificationActionEventArgs e)
         {
-            // your code goes here
-            LocalNotificationCenter.Current.ClearAll();
-            NavigationService.Navigate<NotificationPageModel, NotificationParams>(new NotificationParams()
+            if (e.IsDismissed)
             {
-                Information = e.Request.Title,
-                Data = e.Request.ReturningData
-            });
+                LocalNotificationCenter.Current.ClearAll();
+                return;
+            }
+            if (e.IsTapped)
+            {
+                // your code goes here
+                LocalNotificationCenter.Current.ClearAll();
+                NavigationService.Navigate<NotificationPageModel, NotificationParams>(new NotificationParams()
+                {
+                    Information = e.Request.Title,
+                    Data = e.Request.ReturningData
+                });
+                return;
+            }
+            // if Notification Action are setup
+            switch (e.ActionId)
+            {
+                // your code goes here
+            }
         }
 
         private static void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs unobservedTaskExceptionEventArgs)
