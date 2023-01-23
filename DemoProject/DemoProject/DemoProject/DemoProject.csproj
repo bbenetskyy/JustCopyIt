@@ -17,6 +17,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
     <PackageReference Include="MvvmCross" Version="8.0.2" />
     <PackageReference Include="MvvmCross.Forms" Version="8.0.2" />
+    <PackageReference Include="Refit" Version="5.2.4" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="MvvmCross" />
@@ -24,6 +25,7 @@
     <None Remove="Pages\" />
     <None Remove="PageModel\" />
     <None Remove="Services\" />
+    <None Remove="Refit" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

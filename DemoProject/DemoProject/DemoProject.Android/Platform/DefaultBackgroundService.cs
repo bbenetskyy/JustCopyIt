@@ -41,11 +41,10 @@ namespace DemoProject.Droid.Platform
         protected override Task Work()
         {
             var instance = Mvx.IoCProvider.Resolve<IDefaultBackgroundService>();//Replace with your IOC container
+            var service = Mvx.IoCProvider.Resolve<IWorkService>();
 
             return Task.Run(async () =>
             {
-                //todo new MyNotification().Show();
-                int index = 1;
                 do
                 {
                     System.Diagnostics.Debug.WriteLine("");
@@ -55,15 +54,16 @@ namespace DemoProject.Droid.Platform
                     System.Diagnostics.Debug.WriteLine("");
                     System.Diagnostics.Debug.WriteLine("=============");
                     System.Diagnostics.Debug.WriteLine("");
-                    index++;
-                    await Task.Delay(TimeSpan.FromSeconds(3));
+
+                    await service.Do();
+                    await Task.Delay(TimeSpan.FromSeconds(10));
 
                     var token = instance.TokenSource.Token;
                     if (token.IsCancellationRequested)
                     {
                         token.ThrowIfCancellationRequested();
                     }
-                } while (index <= 10);
+                } while (true);
 
                 base.Stop();
             });
