@@ -10,7 +10,7 @@ using Plugin.LocalNotification;
 
 namespace DemoProject.Droid
 {
-    [Activity(Label = "DemoProject", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "DemoProject", Icon = "@drawable/my_icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : MvxFormsAppCompatActivity<Setup, CoreApp, App>
     {
         protected override void OnCreate(Bundle savedInstanceState)

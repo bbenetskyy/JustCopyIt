@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Input;
 using DemoProject.Services;
 using MvvmCross.Commands;
@@ -57,11 +57,8 @@ namespace DemoProject.PageModels
                 },
                 Android =
                 {
-                    Priority = AndroidPriority.Max,
-                    IconSmallName =
-                    {
-                        ResourceName = "launcher_foreground"
-                    }
+                    IconLargeName = new AndroidIcon("my_icon"),
+                    IconSmallName = new AndroidIcon("notification_icon")
                 }
             };
 
